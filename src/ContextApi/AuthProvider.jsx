@@ -12,6 +12,7 @@ const AuthProvider = ({children}) => {
     const [loading,setLoading]=useState(true);
     const [user,setUser]=useState(null);
     const [error,setError]=useState(null);
+    const [carts,setCarts]=useState(null);
 
     const createEmail=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password);
@@ -65,7 +66,9 @@ const AuthProvider = ({children}) => {
         githubLogin,
         fbLogin,
         error,
-        setError
+        setError,
+        carts,
+        setCarts
     }
     
 

@@ -17,6 +17,7 @@ import CountContext from './ContextApi/CountContext.jsx';
 import AuthProvider from './ContextApi/AuthProvider.jsx';
 import Information from './Components/Information';
 import PrivateRoute from './Route/PrivateRoute.jsx';
+import Cart from './Components/Cart.jsx';
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         path:"/products/:productId",
         loader:({params})=>fetch(`https://fakestoreapi.com/products/${params.productId}`),
         element:<PrivateRoute><DetailPage></DetailPage></PrivateRoute>
+      },
+      {
+        path:"/carts",
+        loader:()=>fetch(`http://localhost:3000/items`),
+        element:<PrivateRoute><Cart></Cart></PrivateRoute>
       },
       {
         path:"/about",

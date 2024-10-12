@@ -10,6 +10,7 @@ const Navbar = ({dark,handleTheme}) => {
     <li><NavLink to={"/about"}>About</NavLink></li>
     <li><NavLink to={"/products"}>Products</NavLink></li>
     {user && <li><NavLink to={"/info"}>Information</NavLink></li>}
+    {user && <li><NavLink to={"/carts"}>Cart</NavLink></li>}
     
     {
       user ?

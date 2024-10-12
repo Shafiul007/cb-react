@@ -2,8 +2,25 @@ import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const DetailPage = () => {
+    // const nameRef=useRef(null);
+    // const priceRef=useRef(null);
     const product=useLoaderData();
     const {image,title,price,description}=product;
+    const addOrder=()=>{
+      const item={image,title,price,description}
+      fetch('http://localhost:3000/items',{
+        method: 'POST',
+        headers:{
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify(item)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data);
+        alert('success');
+      })
+    }
     return (
         <div className="card bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
@@ -18,9 +35,10 @@ const DetailPage = () => {
           <p>{description}</p>
           <div className="card-actions">
             <Link to={"/products"}><button className='btn bg-green-500 text-purple-100'>Back To Products</button></Link>
-             
+             <button className='btn bg-green-700 text-white' onClick={addOrder}>Add To Cart</button>
           </div>
-          <button className='btn bg-orange-200 hover:bg-lime-400 text-red-500 font-bold'>Order Now</button>
+        
+          
         </div>
       </div>
     );
