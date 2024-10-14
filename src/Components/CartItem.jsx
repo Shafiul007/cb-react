@@ -20,8 +20,8 @@ const CartItem = ({product,carts,setCarts}) => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-                //first select the main url (https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app) then click ctrl+shift+f tarpor vercel url replace kora.
-                fetch(`https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items/${_id}`,{
+                //first select the main url (https://cb-react-server.vercel.app) then click ctrl+shift+f tarpor vercel url replace kora.
+                fetch(`https://cb-react-server.vercel.app/items/${_id}`,{
                     method: 'DELETE',
                 })
                 .then(res=>res.json())

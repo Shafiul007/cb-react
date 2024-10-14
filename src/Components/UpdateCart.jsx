@@ -18,7 +18,7 @@ const UpdateCart = () => {
         const information={image,title,price,description};
         console.log(information);
         //fetch e template string use kora, karon dynamically id dhorbe.
-        fetch(`https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items/${_id}`,{
+        fetch(`https://cb-react-server.vercel.app/items/${_id}`,{
             //update korbe tai method e 'PUT' dewa.
             method:'PUT',
             headers: {'Content-Type': 'application/json'},

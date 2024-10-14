@@ -44,13 +44,13 @@ const router = createBrowserRouter([
       {
         path:"/carts",
         //server side theke get er maddhome collection er full data peyeche.
-        loader:()=>fetch(`https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items`),
+        loader:()=>fetch(`https://cb-react-server.vercel.app/items`),
         element:<PrivateRoute><Cart></Cart></PrivateRoute>
       },
       {
         path:"/update/:id",
         //server side update er 1st step theke specific id er data peyeche.
-        loader:({params})=>fetch(`https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items/${params.id}`),
+        loader:({params})=>fetch(`https://cb-react-server.vercel.app/items/${params.id}`),
         element:<PrivateRoute><UpdateCart></UpdateCart></PrivateRoute>
       },
       {

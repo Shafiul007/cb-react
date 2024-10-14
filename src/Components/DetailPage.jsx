@@ -9,7 +9,7 @@ const DetailPage = () => {
     const {image,title,price,description}=product;
     const addOrder=()=>{
       const item={image,title,price,description}
-      fetch('https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items',{
+      fetch('https://cb-react-server.vercel.app/items',{
         method: 'POST',
         headers:{
           'content-type': 'application/json'
