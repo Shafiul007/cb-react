@@ -11,7 +11,7 @@ const Cart = () => {
             <h1 className='text-center text-2xl'>Item: {carts.length}</h1>
             <div className='grid grid-cols-1 items-center p-3 md:grid-cols-2 justify-center space-x-1'>
             {
-                products.map(product=><CartItem key={product._id} carts={carts} setCarts={setCarts} product={product}></CartItem>)
+                carts.map(product=><CartItem key={product._id} carts={carts} setCarts={setCarts} product={product}></CartItem>)
             }
             </div>
            

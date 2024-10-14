@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const DetailPage = () => {
     // const nameRef=useRef(null);
@@ -8,7 +9,7 @@ const DetailPage = () => {
     const {image,title,price,description}=product;
     const addOrder=()=>{
       const item={image,title,price,description}
-      fetch('http://localhost:3000/items',{
+      fetch('https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items',{
         method: 'POST',
         headers:{
           'content-type': 'application/json'
@@ -18,7 +19,16 @@ const DetailPage = () => {
       .then(res=>res.json())
       .then(data=>{
         console.log(data);
-        alert('success');
+        if(data.insertedId){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Add to cart successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+        // alert('Add to cart successfully');
       })
     }
     return (

@@ -18,6 +18,7 @@ import AuthProvider from './ContextApi/AuthProvider.jsx';
 import Information from './Components/Information';
 import PrivateRoute from './Route/PrivateRoute.jsx';
 import Cart from './Components/Cart.jsx';
+import UpdateCart from './Components/UpdateCart.jsx';
 
 
 const router = createBrowserRouter([
@@ -42,8 +43,15 @@ const router = createBrowserRouter([
       },
       {
         path:"/carts",
-        loader:()=>fetch(`http://localhost:3000/items`),
+        //server side theke get er maddhome collection er full data peyeche.
+        loader:()=>fetch(`https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items`),
         element:<PrivateRoute><Cart></Cart></PrivateRoute>
+      },
+      {
+        path:"/update/:id",
+        //server side update er 1st step theke specific id er data peyeche.
+        loader:({params})=>fetch(`https://cb-react-server-ex3de304c-asads-projects-096599f7.vercel.app/items/${params.id}`),
+        element:<PrivateRoute><UpdateCart></UpdateCart></PrivateRoute>
       },
       {
         path:"/about",

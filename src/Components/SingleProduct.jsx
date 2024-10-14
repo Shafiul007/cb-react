@@ -9,7 +9,7 @@ const SingleProduct = ({product}) => {
     <img
       src={image}
       alt={title}
-      className="rounded-xl" />
+      className="rounded-xl w-60 h-60" />
   </figure>
   <div className="card-body items-center text-center">
   <h2 className="card-title text-red-600 font-bold">Price :${price}</h2>
